@@ -52,13 +52,22 @@ if mods["angelspetrochem"] then
   krastorio.technologies.addPrerequisite("chlorine-processing-3", "chlorine-processing-1")
   krastorio.technologies.addPrerequisite("chlorine-processing-3", "chlorine-processing-2")
   krastorio.technologies.removePrerequisite("chlorine-processing-3", "chlorine-processing-2")
-  if data.raw.technology["chlorine-processing-3"] then
+  --[[if data.raw.technology["chlorine-processing-3"] then
     data.raw.technology["chlorine-processing-2"] = data.raw.technology["chlorine-processing-3"]
     data.raw.technology["chlorine-processing-3"] = nil
     data.raw.technology["chlorine-processing-2"].name = "chlorine-processing-2"
     krastorio.technologies.convertPrerequisiteFromAllTechnologies(
       "chlorine-processing-3",
       "chlorine-processing-2",
+      true
+    )
+  end]]--
+  if data.raw.technology["chlorine-processing-4"] then
+    data.raw.technology["chlorine-processing-4"] = data.raw.technology["chlorine-processing-3"]
+    data.raw.technology["chlorine-processing-4"] = nil
+    krastorio.technologies.convertPrerequisiteFromAllTechnologies(
+      "chlorine-processing-4",
+      "chlorine-processing-3",
       true
     )
   end
@@ -68,7 +77,7 @@ if mods["angelspetrochem"] then
   data.raw.technology["resin-2"] = nil
   data.raw.technology["resin-3"] = nil
 
-  data.raw.technology["angel-flare-stack"] = nil
+  data.raw.technology["angels-flare-stack"] = nil
   data.raw.technology["rubber"] = nil
 
   -- Change the air filters
