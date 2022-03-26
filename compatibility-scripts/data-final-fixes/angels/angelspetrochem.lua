@@ -101,11 +101,8 @@ if mods["angelspetrochem"] then
   krastorio.recipes.replaceIngredient("rocket-fuel-with-ammonia", "iron-plate", { "rocket-fuel-capsule", 10 })
   krastorio.recipes.addIngredient("rocket-fuel-with-ammonia", { "rocket-oxidizer-capsule", 10 })
 
-  krastorio.recipes.replaceIngredient("rocket-fuel-with-hydrogen-chlorine", "iron-plate", {
-    "rocket-fuel-capsule",
-    10,
-  })
-  krastorio.recipes.addIngredient("rocket-fuel-with-hydrogen-chlorine", { "rocket-oxidizer-capsule", 10 })
+  krastorio.recipes.replaceIngredient("rocket-fuel-with-hydrogen-chloride", "iron-plate", { "rocket-fuel-capsule", 10 })
+  krastorio.recipes.addIngredient("rocket-fuel-with-hydrogen-chloride", { "rocket-oxidizer-capsule", 10 })
 
   -- Fixing coke ingredients
   krastorio.recipes.addIngredient("solid-coke", { "wood", 4 })
