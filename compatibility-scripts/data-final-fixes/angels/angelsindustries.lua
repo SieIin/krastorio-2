@@ -37,4 +37,35 @@ if mods["angelsindustries"] then
 
   data.raw.technology["angels-ghosting-angels-construction-robots"] = nil
   data.raw.technology["angels-ghosting-construction-robots"] = nil
+
+  -- Modify angel's crawler grid 
+
+  data:extend({
+    
+    {
+      type = "equipment-grid",
+      name = "kr-crawler-grid",
+      width = 10,
+      height = 10,
+      equipment_categories = { "universal-equipment", "vehicle-equipment", "vehicle-motor"},
+    }
+  })
+  data.raw["car"]["angels-crawler"].equipment_grid = "kr-crawler-grid"
+
+  -- Remove obsolete items
+
+  krastorio.technologies.removeUnlockRecipe("angels-crawler", "angels-construction-roboport-vequip")
+  krastorio.technologies.addPrerequisite("angels-crawler", "automobilism")
+  krastorio.technologies.removePrerequisite("angels-crawler", "angels-vequipment-1")
+
+  data.raw.recipe["angels-burner-generator-vequip"] = nil
+  data.raw.recipe["angels-repair-roboport-vequip"] = nil
+  data.raw.technology["angels-vequipment-1"] = nil
+
+  data.raw.recipe["angels-construction-roboport-vequip"] = nil
+  krastorio.technologies.removeUnlockRecipe("angels-crawler", "angels-construction-roboport-vequip")
+
+  data.raw.recipe["angels-fusion-reactor-vequip"] = nil
+  data.raw.recipe["angels-heavy-energy-shield-vequip"] = nil
+  data.raw.technology["angels-vequipment-2"] = nil
 end
